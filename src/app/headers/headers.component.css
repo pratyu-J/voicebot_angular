@@ -1,0 +1,30 @@
+.header-main {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 10px;
+  }
+  
+  .header-content {
+    display: flex;
+  }
+  
+  .heading-profile-details {
+    display: flex;
+    align-items: center;
+  }
+  
+  .profile-image {
+    margin-left: 10px;
+  }
+  
+  .btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .mat-menu {
+    position: absolute !important;
+  }
+  

@@ -1,0 +1,56 @@
+<div class="chat-logo" (click)="toggleChat()">
+    <i class="fa fa-comments" aria-hidden="true" style="font-size: 40px"></i>
+  </div>
+  <div class="chat-window" [ngStyle]="{ display: isChatOpen ? 'block' : 'none' }">
+    <div class="chat-header">
+      GDRFA
+      <!-- <div style="margin-right: 60px;">
+        <span class="bot-type" style="size: 10px; margin: 4px;"[class.voice-bot]="selected">{{ selected ? 'voice-bot' : 'chatbot' }}</span>
+        <span class="user-icon fa fa-user-circle-o"></span>
+        <label class="switch">
+          <input type="checkbox" [(ngModel)]="selected">
+          <span class="slider round"></span>
+        </label>
+        <div>
+          Selected: {{selected}}
+        </div>
+      </div> -->
+      
+      <span class="minimize-icon fa fa-window-minimize" (click)="minimizeChat()"></span>
+      <span class="expand-icon fa fa-expand" (click)="expandChat()"></span>
+      <span class="close-icon fa fa-close" (click)="closeChat()"></span>
+    </div>
+    <!-- <div *ngIf="selected === true">
+      <app-voicebot></app-voicebot>
+    </div>
+    <div *ngIf="selected === false">
+      <app-chatbot></app-chatbot>
+    </div> -->
+
+    <div class="chat-container">
+      <div class="chat-body" #chatBody>
+        <div
+          *ngFor="let message of chatMessages"
+          [ngClass]="{
+            'user-message': message.isUser,
+            'bot-message': !message.isUser
+          }"
+        >
+          <p>{{ message.text }}</p>
+        </div>
+      </div>
+    </div>
+    <div class="body-heigh">
+      <input
+        type="text"
+        class="chat-input"
+        [(ngModel)]="userMessage"
+        placeholder="Type your message..."
+        (keyup.enter)="sendMessages()"
+      />
+      <button class="send-button" (click)="sendMessages()">
+        <i class="fa fa-paper-plane" aria-hidden="true"></i>
+      </button>
+    </div>
+  </div>
+  

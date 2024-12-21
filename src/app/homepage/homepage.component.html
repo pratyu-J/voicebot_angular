@@ -1,0 +1,33 @@
+<body>
+
+  <!-- <div class="voice-chat-container">
+   <div class="chat-box">
+     <div *ngFor="let message of chatMessages" class="chat-message" [ngClass]="{'user-message': message.isUser, 'bot-message': !message.isUser}">
+       {{ message.text }}
+     </div>
+   </div> -->
+ 
+   <!-- Controls for interacting with the bot -->
+   <!-- <div class="controls">
+     <button (click)="startRecording()" [disabled]="isRecording">🎙️ Start Recording</button>
+     <button (click)="stopRecording()" [disabled]="!isRecording">⏹️ Stop Recording</button>
+   </div>
+ </div>  -->
+
+ <div class="main-container">
+  <div class="toggle-container">
+    <button (click)="toggleComponent('chatbot')" style="padding: 5px; margin: 8px;" [ngClass]="{'active': currentComponent === 'chatbot'}">Chatbot</button>
+    <button (click)="toggleComponent('voicebot')" style="padding: 5px; margin: 8px;" [ngClass]="{'active': currentComponent === 'voicebot'}">Voicebot</button>
+  </div>
+
+    <div *ngIf="currentComponent === 'chatbot'">
+      <app-chatbot></app-chatbot>
+    </div>
+  
+    <div *ngIf="currentComponent === 'voicebot'">
+      <app-voicebot></app-voicebot>
+    </div>
+  </div>
+  
+    
+</body>

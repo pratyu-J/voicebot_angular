@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Construction Theme Login Page</title>
+
+</head>
+<body>
+    <img src="/assets/images/gdrfawhitebg.png" style="height: auto; max-width: 100%;">
+  <div class="login-container">
+    <h1>Login</h1>
+    <form (ngSubmit)="login()">
+    <label for="email">Email:</label>
+    <input type="email" [(ngModel)]="email" name="email" required>
+    <label for="password">Password:</label>
+    <input type="password" [(ngModel)]="password" name="password" required>
+    <!-- <label style="margin: 5px;" for="agency">Agency:</label>
+    <select [(ngModel)]="agencyinput" name="agency" required style="margin: 5px; width: 200px; height: 50px; font-size: medium;">
+      <option style="font-size: large;" value="">Select Agency</option>  
+      <option style="font-size: large;" value="Port">Port</option>
+      <option style="font-size: large;" value="Transportation">Transportation</option>
+    </select> -->
+    <button style="margin-top: 10px;" type="submit">Log In</button>
+    </form>
+  </div>
+
+  <div *ngIf="loggedin"> 
+    <span> Not authorized to log in as the agency you selected</span>
+  </div>
+</body>
+</html>
+
+
+<!-- <div>
+    <h2>Login</h2>
+    <form (ngSubmit)="login()">
+      <label for="email">Email:</label>
+      <input type="email" [(ngModel)]="email" name="email" required>
+      <label for="password">Password:</label>
+      <input type="password" [(ngModel)]="password" name="password" required>
+      <button type="submit">Login</button>
+    </form>
+  </div> -->
+  

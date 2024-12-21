@@ -1,0 +1,17 @@
+<div class="header-main">
+    <div class="header-content">
+        <div class="heading-profile-details">
+            <div class="profile-image">
+              <button (click)="onclickhome()" class="btn"><mat-icon>home</mat-icon></button>
+            </div>
+    
+            <div class="profile-image">
+              <button [matMenuTriggerFor]="menu" class="btn"><mat-icon>person</mat-icon></button>
+            </div>
+            <mat-menu #menu="matMenu">
+              <button mat-menu-item>Logged In as {{userid}}</button>
+              <button mat-menu-item (click)="logout()">Log out</button>
+            </mat-menu>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,65 @@
+<!-- <div class="voice-bot-container">
+    <div class="voice-bot-header">
+      <span class="voice-bot-title">Voice Bot</span>
+      <span class="close-icon fa fa-close" (click)="closeVoiceBot()"></span>
+    </div>
+    <div class="voice-bot-body">
+      <div class="voice-bot-messages">
+        <div *ngFor="let message of chatMessages" [ngClass]="{ 'user-message': message.isUser, 'bot-message': !message.isUser }">
+          <p>{{ message.text }}</p>
+        </div>
+      </div>
+      <div class="voice-bot-input">
+        <button (click)="startRecording()">Start Recording</button>
+        <button (click)="stopRecording()">Stop Recording</button>
+      </div>
+    </div>
+  </div> -->
+
+  <div class="chat-logo" (click)="toggleChat()">
+    <i class="fa fa-microphone-alt" aria-hidden="true" style="font-size: 40px"></i>
+  </div>
+  <div class="chat-window" [ngStyle]="{ display: isChatOpen ? 'block' : 'none' }">
+    <div class="chat-header">
+      GDRFA
+      <span class="user-icon fa fa-user-circle-o"></span>
+      <span
+        class="minimize-icon fa fa-window-minimize"
+        (click)="minimizeChat()"
+      ></span>
+      <span class="expand-icon fa fa-expand" (click)="expandChat()"></span>
+      <span class="close-icon fa fa-close" (click)="closeVoiceBot()"></span>
+    </div>
+    <div class="chat-container">
+      <div class="chat-body" #chatBody>
+        <div
+          *ngFor="let message of chatMessages"
+          [ngClass]="{
+            'user-message': message.isUser,
+            'bot-message': !message.isUser
+          }"
+        >
+          <p>{{ message.text }}</p>
+        </div>
+      </div>
+    </div>
+    <div class="body-heigh" style="align-items: center; display: flex; justify-content: center;">
+
+      <div class="record-button-container">
+        <button class="record-button" 
+                [ngClass]="{'recording': isRecording}"
+
+                (click)="toggleRecording()">
+          <span *ngIf="!isRecording">Start Recording</span>
+          <span *ngIf="isRecording">Stop Recording</span>
+        </button>
+        <!-- <button class="stop-audio-button"
+           
+            (click)="stopAudio()">
+        Stop Audio
+    </button> -->
+      </div>
+
+    </div>
+  </div>
+  
